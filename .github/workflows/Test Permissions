@@ -1,0 +1,22 @@
+name: Test Permissions
+
+on: workflow_dispatch
+
+permissions:
+  contents: write
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Try committing a file
+        run: |
+          echo "test" > test.txt
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add test.txt
+          git commit -m "Test commit"
+          git push origin HEAD:main
