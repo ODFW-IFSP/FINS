@@ -5,6 +5,9 @@ on:
     - cron: '30 1 * * *'  # 1:30 AM UTC = 6:30 PM PT (outside maintenance window)
   workflow_dispatch:      # Optional: allows manual run via GitHub
 
+permissions:
+  contents: write
+
 jobs:
   download:
     runs-on: ubuntu-latest
