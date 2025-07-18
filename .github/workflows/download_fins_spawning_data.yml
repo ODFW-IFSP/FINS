@@ -2,7 +2,7 @@ name: Nightly FINS Spawning Data Download
 
 on:
   schedule:
-    - cron: '15 2 * * *'  # 2:15 AM UTC = 7:15 PM PT (outside maintenance window)
+    - cron: '15 2 * * 3'  # 2:15 AM UTC = 7:15 PM PT (outside maintenance window)
   workflow_dispatch:      # Optional: allows manual run via GitHub
 
 permissions:
